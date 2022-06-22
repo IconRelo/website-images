@@ -123,7 +123,7 @@
             },
             formatter: function (params) {
                 console.log('params', params)
-                return params.value[3] + ': ' + params.value[0];
+                //return params.value[3] + ': ' + params.value[0];
             }
         },
         xAxis: {
