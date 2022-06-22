@@ -3,6 +3,7 @@
  // Initialize the echarts instance based on the prepared dom
     let chart = []
         chart['uk_stock'] = echarts.init(document.getElementById('uk-stock'));
+        chart['uk_rent'] = echarts.init(document.getElementById('uk-rent'));
         chart['regional_stock'] = echarts.init(document.getElementById('regional-stock'));
         chart['regional_pricing'] = echarts.init(document.getElementById('regional-pricing'));
         chart['bedroom_breakdown'] = echarts.init(document.getElementById('bedroom-breakdown'));
@@ -11,6 +12,7 @@
   let populateData = (data) =>  {
     console.log('is new:', data)
     populateUKStock(data);
+    populateUKRent(data);
     populateRegionalStock(data.children);
     populateRegionalPricing(data.children);
     populateBedroomBreakdown(data.data)
@@ -109,6 +111,41 @@
     console.log(chart_data);
 
     chart['uk_stock'].setOption({
+        xAxis: {
+            type: 'time'
+          },
+          yAxis: {
+            type: 'value'
+          },
+        series: [
+            {
+                type: "line",
+                name: "Stock",
+                data: chart_data,
+                showSymbol: false,
+            }
+        ]
+     })
+
+  }
+
+
+  let populateUKRent = (data) => {
+
+    let chart_data = data.data.map((item) => {
+        return {
+            'name' : 'Rent',
+            'date' : Date.parse(item.items[0].date),
+            'date_name' : item.items[0].date,
+            'value' : item.average_rent_50
+        
+        }
+    });
+    let labels = data.data.map((item) => item.items[0].date);
+
+    console.log(chart_data);
+
+    chart['uk_rent'].setOption({
         xAxis: {
             type: 'time'
           },
