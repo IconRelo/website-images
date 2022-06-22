@@ -10,11 +10,12 @@
   let populateData = (data) =>  {
     console.log('is new:', data)
     populateUKStock(data);
-    document.getElementById('uk-stock-summary').innerText = 'Rental Property Stock has changed by '+data.overview.stock_change_perc;
     populateUKRent(data);
     populateRegionalStock(data.children);
     populateRegionalPricing(data.children);
     populateBedroomBreakdown(data.data)
+
+    
 
   };
 
@@ -92,6 +93,8 @@
   };
 
   let populateUKStock = (data) => {
+
+    document.getElementById('uk-stock-summary').innerText = 'Rental Property Stock has changed by '+data.overview.stock_change_perc;
 
     let chart_data = data.data.map((item) => {
         return {
@@ -197,9 +200,13 @@
     let labels = data.map((item) => item.area);
     const datasetWithFilters = [];
     const seriesList = [];
+    const increaseDecrease = [];
     let raw_data = [];
     data.forEach((element) => {
         let mapped_data = element.data.map((item) => {
+
+            increaseDecrease.push(item.stock_change)
+
             return {
                 'name':element.area,
                 'region':element.area,
@@ -213,6 +220,15 @@
             raw_data.push(mapped_element)
         })
     })
+
+    let increaseDecrease = {
+        increased : increaseDecrease.filter(item => item > 0),
+        decreased : increaseDecrease.filter(item => item < 0),
+    }
+
+
+document.getElementById('regional-stock-summary').innerText = 'Rental Property Stock decreased in '+increaseDecrease.decreased+'/'+labels.length+' regions';
+
 
   echarts.util.each(labels, function (region) {
     var datasetId = 'dataset_' + region;
