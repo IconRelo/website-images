@@ -47,7 +47,7 @@
             type: 'line',
             datasetId: datasetId,
             showSymbol: false,
-            name: region,
+            name: bedroom,
             endLabel: {
               show: true,
               formatter: function (params) {
