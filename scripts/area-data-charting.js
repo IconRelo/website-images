@@ -261,7 +261,7 @@
 
     chart['uk_stock'].setOption({
         xAxis: {
-            type: 'category',
+            type: 'time',
             data: labels
           },
           yAxis: {
