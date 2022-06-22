@@ -72,6 +72,7 @@
           left: 0,
           right: '4%',
           bottom: '3%',
+          containLabel:true
         },
         xAxis: [
           {
@@ -148,7 +149,8 @@
 
     chart['uk_rent'].setOption({
         grid:{
-          left: 0
+          left: 0,
+          containLabel:true
         },
         xAxis: {
             type: 'time'
@@ -253,7 +255,8 @@
     },
     grid: {
         left: 0,
-        right: 140
+        right: 140,
+        containLabel:true
     },
     series: seriesList,
     dimensions: ['date', 'stock']
@@ -370,7 +373,8 @@
     },
     grid: {
         left: 0,
-        right: 140
+        right: 140,
+        containLabel:true
     },
     series: seriesList,
     dimensions: ['date', 'rent']
