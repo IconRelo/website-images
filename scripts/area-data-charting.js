@@ -221,6 +221,8 @@
         })
     })
 
+    console.log('increase', increaseDecrease)
+
     increaseDecrease = {
         increased : increaseDecrease.filter(item => item > 0),
         decreased : increaseDecrease.filter(item => item < 0),
