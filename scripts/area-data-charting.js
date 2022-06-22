@@ -63,9 +63,9 @@
             encode: {
               x: 'date',
               y: 'rent',
-              label: ['region', 'rent'],
+              label: ['name', 'value'],
               itemName: 'Date',
-              tooltip: ['rent']
+              tooltip: ['value']
             }
           });
         });
@@ -80,11 +80,6 @@
             },
             label: {
               formatter: '{b}: {@2012} ({d}%)'
-            },
-            encode: {
-              itemName: 'product',
-              value: '2012',
-              tooltip: '2012'
             }
           })
 
@@ -102,6 +97,9 @@
         grid: { top: '55%' },
         series: seriesList
       };
+
+
+  chart['bedroom_breakdown'].setOption(option);
   };
 
   let populateUKStock = (data) => {
