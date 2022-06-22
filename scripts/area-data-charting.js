@@ -153,7 +153,10 @@
                 name: "Stock",
                 smooth: true,
                 showSymbol: false,
-                data: chart_data.reverse(),
+                data: chart_data,
+                lineStyle: {
+                  width: 4
+                },
             }
         ]
      })
