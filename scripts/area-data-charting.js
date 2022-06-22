@@ -43,6 +43,9 @@
         })
     });
 
+
+    console.log('raw', raw_data)
+
     raw_data.forEach((bed) => {
         series.push({
             name: bed[0].name,
