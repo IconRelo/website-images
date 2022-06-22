@@ -115,7 +115,6 @@
             type: 'time'
           },
           yAxis: {
-            type: 'value'
           },
         series: [
             {
@@ -267,11 +266,9 @@
 
     chart['uk_pricing'].setOption({
         xAxis: {
-            type: 'time',
-            data: labels
+            type: 'time'
           },
           yAxis: {
-            type: 'value'
           },
         series: [
             {
