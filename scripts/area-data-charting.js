@@ -99,6 +99,7 @@
             'name' : 'Stock',
             'date' : Date.parse(item.items[0].date),
             'date_name' : item.items[0].date,
+            'stock_change': item.stock_change_from_prev_perc,
             'value' : [
                 Date.parse(item.items[0].date),
                 item.stock
@@ -109,6 +110,22 @@
     let labels = data.data.map((item) => item.items[0].date);
 
     chart['uk_stock'].setOption({
+
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'line',
+                lineStyle: {
+                    color: 'rgba(0,0,0,0.2)',
+                    width: 1,
+                    type: 'solid'
+                }
+            },
+            formatter: function (params) {
+                console.log('params', params)
+                return params.value[3] + ': ' + params.value[0];
+            }
+        },
         xAxis: {
             type: 'time'
           },
