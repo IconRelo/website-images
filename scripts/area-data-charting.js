@@ -39,10 +39,20 @@
 
   let populateRegionalStock = (data) => {
 
-    let labels = data.map((item) => item.area)
+    let labels = data.map((item) => item.area);
+    const datasetWithFilters = [];
+    const seriesList = [];
+    let raw_data = [];
+    data.forEach((item) => {
+        raw_data.push(
+            item.map((item) => {
+                return { 'name':region.area, 'value': item.stock, 'date': Date.parse(item.items[0].date) }
+            })
+        )
+    })
 
-  const datasetWithFilters = [];
-  const seriesList = [];
+    console.log(raw_data);
+    
 
   echarts.util.each(labels, function (region) {
     var datasetId = 'dataset_' + region;
@@ -90,7 +100,7 @@
     dataset: [
       {
         id: 'dataset_raw',
-        source: region.data.map((item) => { return { 'name':region.area, 'value': item.stock, 'date': Date.parse(item.items[0].date) }})
+        source: raw_data
       },
       ...datasetWithFilters
     ],
