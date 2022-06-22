@@ -144,6 +144,14 @@
 
   let populateUKRent = (data) => {
 
+    if(data.overview.rent_change > 0){
+        document.getElementById('uk-rent-summary').innerText = 'Rental Property Rents have gone up by on average £'+Math.round(data.overview.rent_change);
+    } else {
+        document.getElementById('uk-rent-summary').innerText = 'Rental Property Rents have gone down by on average £'+Math.round(data.overview.rent_change);
+    }
+
+
+
     let chart_data = data.data.map((item) => {
         return {
             'name' : 'Rent',
@@ -208,8 +216,6 @@
 
         let mapped_data = element.data.map((item) => {
 
-            
-
             return {
                 'name':element.area,
                 'region':element.area,
@@ -223,8 +229,6 @@
             raw_data.push(mapped_element)
         })
     })
-
-    console.log('increase', increaseDecrease)
 
     increaseDecrease = {
         increased : increaseDecrease.filter(item => item > 0),
