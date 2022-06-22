@@ -46,7 +46,13 @@
     data.forEach((element) => {
         console.log(element)
         let mapped_data = element.data.map((item) => {
-            return { 'name':element.area, 'value': item.stock, 'date': Date.parse(item.items[0].date) }
+            return {
+                'name':element.area,
+                'region':element.area,
+                'value': item.stock,
+                'stock': item.stock,
+                'date': Date.parse(item.items[0].date)
+            }
         })
         mapped_data.forEach((mapped_element) => {
             raw_data.push(mapped_element)
@@ -65,8 +71,8 @@
         type: 'filter',
         config: {
           and: [
-            { dimension: 'Year', gte: 1950 },
-            { dimension: 'Region', '=': region }
+            { dimension: 'date', gte: 1950 },
+            { dimension: 'region', '=': region }
           ]
         }
       }
@@ -79,7 +85,7 @@
       endLabel: {
         show: true,
         formatter: function (params) {
-          return params.value[3] + ': ' + params.value[0];
+          return params.value.name + ': ' + params.value.value;
         }
       },
       labelLayout: {
