@@ -70,36 +70,54 @@
           });
         });
 
-        seriesList.push({
-            type: 'pie',
-            id: 'pie',
-            radius: '30%',
-            center: ['50%', '25%'],
-            emphasis: {
-              focus: 'self'
+        let option = {
+            tooltip: {
+              trigger: 'axis',
+              axisPointer: {
+                type: 'line',
+                lineStyle: {
+                  color: 'rgba(0,0,0,0.2)',
+                  width: 1,
+                  type: 'solid'
+                }
+              }
             },
-            label: {
-              formatter: '{b}: {@2012} ({d}%)'
+            legend: {
+              data: labels
             },
-            encode: {
-                itemName: 'name'
-            }
-          })
-
-    option = {
-        legend: {},
-        tooltip: {
-          trigger: 'axis',
-          showContent: false
-        },
-        dataset: {
-          source: raw_data
-        },
-        xAxis: { type: 'category' },
-        yAxis: { gridIndex: 0 },
-        grid: { top: '55%' },
-        series: seriesList
-    };
+            singleAxis: {
+              top: 50,
+              bottom: 50,
+              axisTick: {},
+              axisLabel: {},
+              type: 'time',
+              axisPointer: {
+                animation: true,
+                label: {
+                  show: true
+                }
+              },
+              splitLine: {
+                show: true,
+                lineStyle: {
+                  type: 'dashed',
+                  opacity: 0.2
+                }
+              }
+            },
+            series: [
+              {
+                type: 'themeRiver',
+                emphasis: {
+                  itemStyle: {
+                    shadowBlur: 20,
+                    shadowColor: 'rgba(0, 0, 0, 0.8)'
+                  }
+                },
+                data: raw_data
+              }
+            ]
+          };
 
 
     chart['bedroom_breakdown'].setOption(option);
