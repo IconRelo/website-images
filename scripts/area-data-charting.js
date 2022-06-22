@@ -95,12 +95,19 @@
 
   let populateUKStock = (data) => {
 
-    let chart_data = data.data.map((item) => item.stock);
+    let chart_data = data.data.map((item) => {
+        return {
+            'name' : 'Stock',
+            'date' : Date.parse(item.items[0].date),
+            'value' : item.stock
+        
+        }
+    });
     let labels = data.data.map((item) => item.items[0].date);
 
     chart['uk_stock'].setOption({
         xAxis: {
-            type: 'category',
+            type: 'time',
             data: labels
           },
           yAxis: {
