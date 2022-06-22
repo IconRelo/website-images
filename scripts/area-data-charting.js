@@ -45,7 +45,7 @@
     let raw_data = [];
     data.forEach((element) => {
         console.log(element)
-        raw_data.push(
+        raw_data.concat(
             element.data.map((item) => {
                 return { 'name':element.area, 'value': item.stock, 'date': Date.parse(item.items[0].date) }
             })
