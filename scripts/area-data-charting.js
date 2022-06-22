@@ -122,7 +122,7 @@
                 }
             },
             formatter: function (params) {
-                return 'Stock change: '+ (params[0].data.stock_change) ? params[0].data.stock_change : '0%';
+                return (params[0].data.stock_change) ? 'Stock change:'+ params[0].data.stock_change : 'Stock change: 0%';
             }
         },
         xAxis: {
