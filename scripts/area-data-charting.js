@@ -38,38 +38,6 @@
         })
     });
 
-    console.log(raw_data);
-
-    
-    labels.forEach((bedroom) => {
-        var datasetId = 'dataset_' + bedroom;
-        seriesList.push({
-            type: 'line',
-            datasetId: datasetId,
-            showSymbol: false,
-            name: bedroom,
-            endLabel: {
-              show: true,
-              formatter: function (params) {
-                return params.data.name;
-              }
-            },
-            labelLayout: {
-              moveOverlap: 'shiftY'
-            },
-            emphasis: {
-              focus: 'series'
-            },
-            encode: {
-              x: 'date',
-              y: 'rent',
-              label: ['name', 'value'],
-              itemName: 'Date',
-              tooltip: ['value']
-            }
-          });
-        });
-
         let option = {
             tooltip: {
               trigger: 'axis',
