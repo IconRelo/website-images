@@ -40,6 +40,7 @@
   let populateRegionalStock = (data) => {
 
     let labels = data.map((item) => item.area);
+    console.log(labels)
     const datasetWithFilters = [];
     const seriesList = [];
     let raw_data = [];
@@ -85,6 +86,7 @@
       endLabel: {
         show: true,
         formatter: function (params) {
+            console.log('params', params)
           return params.value.name + ': ' + params.value.value;
         }
       },
