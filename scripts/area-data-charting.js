@@ -200,7 +200,7 @@
     let labels = data.map((item) => item.area);
     const datasetWithFilters = [];
     const seriesList = [];
-    const increaseDecrease = [];
+    let increaseDecrease = [];
     let raw_data = [];
     data.forEach((element) => {
         let mapped_data = element.data.map((item) => {
@@ -221,7 +221,7 @@
         })
     })
 
-    let increaseDecrease = {
+    increaseDecrease = {
         increased : increaseDecrease.filter(item => item > 0),
         decreased : increaseDecrease.filter(item => item < 0),
     }
