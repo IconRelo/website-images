@@ -122,7 +122,7 @@
                 }
             },
             formatter: function (params) {
-                return (params[0].data.stock_change) ? 'Stock change:'+ params[0].data.stock_change : 'Stock change: 0%';
+                return (params[0].data.stock_change) ? 'Stock Change: '+ params[0].data.stock_change : 'Stock Change: 0%';
             }
         },
         xAxis: {
@@ -152,6 +152,7 @@
             'name' : 'Rent',
             'date' : Date.parse(item.items[0].date),
             'date_name' : item.items[0].date,
+            'rent_change': item.rent_change_from_prev_perc,
             'value' : [
                 Date.parse(item.items[0].date),
                 item.average_rent_50
@@ -164,6 +165,20 @@
     console.log(chart_data);
 
     chart['uk_rent'].setOption({
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'line',
+                lineStyle: {
+                    color: 'rgba(0,0,0,0.2)',
+                    width: 1,
+                    type: 'solid'
+                }
+            },
+            formatter: function (params) {
+                return (params[0].data.rent_change) ? 'Rental Price Change: '+ params[0].data.rent_change : 'Rental Price Change: 0%';
+            }
+        },
         grid:{
           left: 0,
           containLabel:true
@@ -200,6 +215,7 @@
                 'region':element.area,
                 'value': item.stock,
                 'stock': item.stock,
+                'stock_change': item.stock_change_from_prev_perc,
                 'date': Date.parse(item.items[0].date)
             }
         })
@@ -250,6 +266,20 @@
     });
   });
   option = {
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'line',
+            lineStyle: {
+                color: 'rgba(0,0,0,0.2)',
+                width: 1,
+                type: 'solid'
+            }
+        },
+        formatter: function (params) {
+            return (params[0].data.stock_change) ? 'Stock change: '+ params[0].data.stock_change : 'Stock change: 0%';
+        }
+    },
     animationDuration: 5000,
     dataset: [
       {
@@ -316,7 +346,8 @@
                 'region':element.area,
                 'value': Math.round(item.average_rent_50),
                 'rent': Math.round(item.average_rent_50),
-                'date': Date.parse(item.items[0].date)
+                'date': Date.parse(item.items[0].date),
+                'rent_change': item.rent_change_from_prev_perc,
             }
         })
         mapped_data.forEach((mapped_element) => {
@@ -368,6 +399,20 @@
     });
   });
   option = {
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'line',
+            lineStyle: {
+                color: 'rgba(0,0,0,0.2)',
+                width: 1,
+                type: 'solid'
+            }
+        },
+        formatter: function (params) {
+            return (params[0].data.rent_change) ? 'Rental Price Change: '+ params[0].data.rent_change : 'Rental Price Change: 0%';
+        }
+    },
     animationDuration: 5000,
     dataset: [
       {
