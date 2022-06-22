@@ -62,9 +62,6 @@
         })
     })
 
-    console.log(raw_data);
-    
-
   echarts.util.each(labels, function (region) {
     var datasetId = 'dataset_' + region;
     datasetWithFilters.push({
@@ -88,7 +85,7 @@
       endLabel: {
         show: true,
         formatter: function (params) {
-          return params.data.name + ': ' + params.data.value;
+          return params.data.name;
         }
       },
       labelLayout: {
@@ -176,8 +173,8 @@
             return {
                 'name':element.area,
                 'region':element.area,
-                'value': item.average_rent_50,
-                'rent': item.average_rent_50,
+                'value': Math.round(item.average_rent_50),
+                'rent': Math.round(item.average_rent_50),
                 'date': Date.parse(item.items[0].date)
             }
         })
@@ -212,7 +209,7 @@
       endLabel: {
         show: true,
         formatter: function (params) {
-          return params.data.name + ': ' + params.data.value;
+          return params.data.name;
         }
       },
       labelLayout: {
