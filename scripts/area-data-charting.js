@@ -90,9 +90,8 @@
         },
         xAxis: [
           {
-            type: 'category',
-            boundaryGap: false,
-            data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+            type: 'time',
+            boundaryGap: false
           }
         ],
         yAxis: [
