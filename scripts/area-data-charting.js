@@ -150,8 +150,6 @@
         document.getElementById('uk-rent-summary').innerText = 'Rental Property Rents have gone down on average £'+Math.round(data.overview.rent_change)+ ' per month';
     }
 
-
-
     let chart_data = data.data.map((item) => {
         return {
             'name' : 'Rent',
@@ -348,8 +346,12 @@ document.getElementById('regional-stock-summary').innerText = 'Rental Property S
     let labels = data.map((item) => item.area);
     const datasetWithFilters = [];
     const seriesList = [];
+    let increaseDecrease = [];
     let raw_data = [];
     data.forEach((element) => {
+
+        increaseDecrease.push(element.overview.rent_change)
+
         let mapped_data = element.data.map((item) => {
             return {
                 'name':element.area,
@@ -364,6 +366,15 @@ document.getElementById('regional-stock-summary').innerText = 'Rental Property S
             raw_data.push(mapped_element)
         })
     })
+
+    increaseDecrease = {
+        increased : increaseDecrease.filter(item => item > 0),
+        decreased : increaseDecrease.filter(item => item < 0),
+    }
+
+
+document.getElementById('regional-rent-summary').innerText = 'Rental Property Prices have increased in '+increaseDecrease.increased.length +' out of '+labels.length+' regions';
+
     
 
     echarts.util.each(labels, function (region) {
