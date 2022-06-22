@@ -62,22 +62,8 @@
           })
     })
 
-    console.log(series)
-
 
     option = {
-        title: {
-          text: 'Stacked Area Chart'
-        },
-        tooltip: {
-          trigger: 'axis',
-          axisPointer: {
-            type: 'cross',
-            label: {
-              backgroundColor: '#6a7985'
-            }
-          }
-        },
         legend: {
           data: labels
         },
@@ -95,6 +81,7 @@
         ],
         yAxis: [
           {
+            show:false,
             type: 'value'
           }
         ],
