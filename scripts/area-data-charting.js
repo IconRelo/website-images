@@ -64,13 +64,12 @@
           })
     })
 
-
     option = {
         legend: {
           data: labels
         },
         grid: {
-          left: '3%',
+          left: 0,
           right: '4%',
           bottom: '3%',
           containLabel: true
@@ -89,58 +88,6 @@
         ],
         series: series
       };
-
-    console.log(labels);
-
-        /*let option = {
-            tooltip: {
-              trigger: 'axis',
-              axisPointer: {
-                type: 'line',
-                lineStyle: {
-                  color: 'rgba(0,0,0,0.2)',
-                  width: 1,
-                  type: 'solid'
-                }
-              }
-            },
-            legend: {
-              data: labels
-            },
-            singleAxis: {
-              top: 50,
-              bottom: 50,
-              axisTick: {},
-              axisLabel: {},
-              type: 'time',
-              axisPointer: {
-                animation: true,
-                label: {
-                  show: true
-                }
-              },
-              splitLine: {
-                show: true,
-                lineStyle: {
-                  type: 'dashed',
-                  opacity: 0.2
-                }
-              }
-            },
-            series: [
-              {
-                type: 'themeRiver',
-                emphasis: {
-                  itemStyle: {
-                    shadowBlur: 20,
-                    shadowColor: 'rgba(0, 0, 0, 0.8)'
-                  }
-                },
-                data: raw_data
-              }
-            ]
-          };*/
-
 
     chart['bedroom_breakdown'].setOption(option);
   };
@@ -201,6 +148,9 @@
     console.log(chart_data);
 
     chart['uk_rent'].setOption({
+        grid:{
+          left: 0
+        },
         xAxis: {
             type: 'time'
           },
@@ -303,7 +253,8 @@
         show: false,
     },
     grid: {
-      right: 140
+        left: 0,
+        right: 140
     },
     series: seriesList,
     dimensions: ['date', 'stock']
@@ -419,7 +370,8 @@
         show: false,
     },
     grid: {
-      right: 140
+        left: 0,
+        right: 140
     },
     series: seriesList,
     dimensions: ['date', 'rent']
