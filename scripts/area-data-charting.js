@@ -1,8 +1,8 @@
 
 
  // Initialize the echarts instance based on the prepared dom
- let chart = []
-    chart['uk_stock'] = echarts.init(document.getElementById('uk-stock'));
+    let chart = []
+        chart['uk_stock'] = echarts.init(document.getElementById('uk-stock'));
 
 
   let populateData = (data) =>  {
