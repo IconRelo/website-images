@@ -22,7 +22,6 @@
   let populateBedroomBreakdown = (data) => {
 
     let raw_data = [];
-    let data = [];
     let series = [];
     let labels = [];
 
@@ -34,7 +33,7 @@
             if(typeof data == 'undefined'){
                 data[bedroom.bedrooms] = []
             }
-            data[bedroom.bedrooms].push(
+            raw_data[bedroom.bedrooms].push(
                 {
                     name: (bedroom.bedrooms) ? bedroom.bedrooms + ' bedroom' : 'Studio',
                     value: bedroom.count,
@@ -44,7 +43,7 @@
         })
     });
 
-    data.forEach((bed) => {
+    raw_data.forEach((bed) => {
         series.push({
             name: bed[0].name,
             type: 'line',
