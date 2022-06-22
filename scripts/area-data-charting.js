@@ -203,9 +203,12 @@
     let increaseDecrease = [];
     let raw_data = [];
     data.forEach((element) => {
+
+        increaseDecrease.push(element.overview.stock_change)
+
         let mapped_data = element.data.map((item) => {
 
-            increaseDecrease.push(item.stock_change)
+            
 
             return {
                 'name':element.area,
