@@ -176,7 +176,7 @@
             return {
                 'name':element.area,
                 'region':element.area,
-                'value': item.stock,
+                'value': item.average_rent_50,
                 'rent': item.average_rent_50,
                 'date': Date.parse(item.items[0].date)
             }
