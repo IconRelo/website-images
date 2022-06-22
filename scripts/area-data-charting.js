@@ -45,11 +45,12 @@
     let raw_data = [];
     data.forEach((element) => {
         console.log(element)
-        raw_data.concat(
-            element.data.map((item) => {
-                return { 'name':element.area, 'value': item.stock, 'date': Date.parse(item.items[0].date) }
-            })
-        )
+        let mapped_data = element.data.map((item) => {
+            return { 'name':element.area, 'value': item.stock, 'date': Date.parse(item.items[0].date) }
+        })
+        mapped_data.forEach((mapped_element) => {
+            raw_data.push(mapped_element)
+        })
     })
 
     console.log(raw_data);
