@@ -1,5 +1,3 @@
-
-
  // Initialize the echarts instance based on the prepared dom
     let chart = []
         chart['uk_stock'] = echarts.init(document.getElementById('uk-stock'));
@@ -12,6 +10,7 @@
   let populateData = (data) =>  {
     console.log('is new:', data)
     populateUKStock(data);
+    document.getElementById('uk-stock-summary').innerText = 'Rental Property Stock has changed by '+data.overview.stock_change_perc;
     populateUKRent(data);
     populateRegionalStock(data.children);
     populateRegionalPricing(data.children);
@@ -317,7 +316,6 @@
             }
         ]
      })
-
   }
 
   let populateRegionalPricing = (data) => {
