@@ -80,6 +80,11 @@
             },
             label: {
               formatter: '{b}: {@2012} ({d}%)'
+            },
+            encode: {
+                itemName: 'date',
+                value: '2012',
+                tooltip: '2012'
             }
           })
 
@@ -96,10 +101,10 @@
         yAxis: { gridIndex: 0 },
         grid: { top: '55%' },
         series: seriesList
-      };
+    };
 
 
-  chart['bedroom_breakdown'].setOption(option);
+    chart['bedroom_breakdown'].setOption(option);
   };
 
   let populateUKStock = (data) => {
