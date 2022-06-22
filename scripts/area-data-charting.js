@@ -25,7 +25,7 @@
         item.items.forEach((bedroom) => {
             raw_data.push(
                 {
-                    name: bedroom.bedrooms + ' bedroom',
+                    name: (bedroom.bedrooms) ? bedroom.bedrooms + ' bedroom' : 'Studio',
                     value: bedroom.count,
                     date: Date.parse(bedroom.date)
                 }
