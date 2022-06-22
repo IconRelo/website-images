@@ -227,7 +227,7 @@
     }
 
 
-document.getElementById('regional-stock-summary').innerText = 'Rental Property Stock decreased in '+increaseDecrease.decreased+'/'+labels.length+' regions';
+document.getElementById('regional-stock-summary').innerText = 'Rental Property Stock decreased in '+increaseDecrease.decreased+' out of '+labels.length+' regions';
 
 
   echarts.util.each(labels, function (region) {
