@@ -56,7 +56,7 @@
               focus: 'series'
             },
             data: bed.map((item) => [
-                Date.parse(item.date),
+                item.date,
                 item.value
               ])
           })
