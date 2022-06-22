@@ -108,20 +108,18 @@
     });
     let labels = data.data.map((item) => item.items[0].date);
 
-    console.log(chart_data);
-
     chart['uk_stock'].setOption({
         xAxis: {
             type: 'time'
           },
-          yAxis: {
-          },
+        yAxis: {
+        },
         series: [
             {
                 type: "line",
                 name: "Stock",
                 smooth: true,
-                data: chart_data,
+                data: chart_data.reverse(),
                 showSymbol: false,
             }
         ]
