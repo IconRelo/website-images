@@ -72,7 +72,6 @@
           left: 0,
           right: '4%',
           bottom: '3%',
-          containLabel: true
         },
         xAxis: [
           {
