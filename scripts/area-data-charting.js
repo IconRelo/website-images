@@ -83,7 +83,7 @@
       datasetId: datasetId,
       showSymbol: false,
       name: region,
-      /*endLabel: {
+      endLabel: {
         show: true,
         formatter: function (params) {
             console.log('params', params)
@@ -99,7 +99,7 @@
       encode: {
         x: 'date',
         y: 'stock',
-        //label: ['region', 'stock'],
+        label: ['region', 'stock'],
         itemName: 'Date',
         tooltip: ['stock']
       }
