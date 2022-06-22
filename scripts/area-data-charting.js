@@ -59,6 +59,7 @@
           })
     })
 
+    console.log(series)
 
 
     option = {
@@ -75,12 +76,7 @@
           }
         },
         legend: {
-          data: ['Email', 'Union Ads', 'Video Ads', 'Direct', 'Search Engine']
-        },
-        toolbox: {
-          feature: {
-            saveAsImage: {}
-          }
+          data: labels
         },
         grid: {
           left: '3%',
