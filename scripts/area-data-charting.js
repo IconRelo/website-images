@@ -112,14 +112,6 @@
     chart['uk_stock'].setOption({
         tooltip: {
             trigger: 'axis',
-            axisPointer: {
-                type: 'line',
-                lineStyle: {
-                    color: 'rgba(0,0,0,0.2)',
-                    width: 1,
-                    type: 'solid'
-                }
-            },
             formatter: function (params) {
                 return (params[0].data.stock_change) ? 'Stock Change: '+ params[0].data.stock_change : 'Stock Change: 0%';
             }
@@ -170,14 +162,6 @@
     chart['uk_rent'].setOption({
         tooltip: {
             trigger: 'axis',
-            axisPointer: {
-                type: 'line',
-                lineStyle: {
-                    color: 'rgba(0,0,0,0.2)',
-                    width: 1,
-                    type: 'solid'
-                }
-            },
             formatter: function (params) {
                 return (params[0].data.rent_change) ? 'Rental Price Change: '+ params[0].data.rent_change : 'Rental Price Change: 0%';
             }
@@ -263,6 +247,10 @@
       emphasis: {
         focus: 'series'
       },
+
+      lineStyle: {
+        width: 4
+      },
       encode: {
         x: 'date',
         y: 'stock',
@@ -275,14 +263,6 @@
   option = {
     tooltip: {
         trigger: 'axis',
-        axisPointer: {
-            type: 'line',
-            lineStyle: {
-                color: 'rgba(0,0,0,0.2)',
-                width: 4,
-                type: 'solid'
-            }
-        },
         formatter: function (params) {
             return (params[0].data.stock_change) ? 'Stock change: '+ params[0].data.stock_change : 'Stock change: 0%';
         }
@@ -396,6 +376,9 @@
       emphasis: {
         focus: 'series'
       },
+      lineStyle: {
+        width: 4
+      },
       encode: {
         x: 'date',
         y: 'rent',
@@ -408,14 +391,6 @@
   option = {
     tooltip: {
         trigger: 'axis',
-        axisPointer: {
-            type: 'line',
-            lineStyle: {
-                color: 'rgba(0,0,0,0.2)',
-                width: 4,
-                type: 'solid'
-            }
-        },
         formatter: function (params) {
             return (params[0].data.rent_change) ? 'Rental Price Change: '+ params[0].data.rent_change : 'Rental Price Change: 0%';
         }
