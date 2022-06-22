@@ -114,6 +114,9 @@
         xAxis: {
             type: 'time'
           },
+          yAxis: {
+            type: 'value'
+          },
         series: [
             {
                 type: "line",
@@ -146,6 +149,9 @@
     chart['uk_rent'].setOption({
         xAxis: {
             type: 'time'
+          },
+          yAxis: {
+            type: 'value'
           },
         series: [
             {
@@ -259,7 +265,7 @@
     let chart_data = data.data.map((item) => item.stock);
     let labels = data.data.map((item) => item.items[0].date);
 
-    chart['uk_stock'].setOption({
+    chart['uk_pricing'].setOption({
         xAxis: {
             type: 'time',
             data: labels
