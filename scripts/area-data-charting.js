@@ -118,7 +118,7 @@
         series: [
             {
                 type: "line",
-                name: "test",
+                name: "Stock",
                 data: chart_data
             }
         ]
