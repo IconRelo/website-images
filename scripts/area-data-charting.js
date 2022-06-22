@@ -92,7 +92,7 @@
       },
       labelLayout: {
         moveOverlap: 'shiftY'
-      },*/
+      },
       emphasis: {
         focus: 'series'
       },
