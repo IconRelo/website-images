@@ -110,7 +110,23 @@
     let labels = data.data.map((item) => item.items[0].date);
 
     chart['uk_stock'].setOption({
-
+        visualMap: [
+            {
+              show: false,
+              type: 'continuous',
+              seriesIndex: 0,
+              min: 0,
+              max: 40000
+            },
+            {
+              show: false,
+              type: 'continuous',
+              seriesIndex: 1,
+              dimension: 0,
+              min: 0,
+              max: dateList.length - 1
+            }
+          ],
         tooltip: {
             trigger: 'axis',
             axisPointer: {
