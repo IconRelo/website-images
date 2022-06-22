@@ -87,7 +87,7 @@
         show: true,
         formatter: function (params) {
             console.log('params', params)
-          return params.value.name + ': ' + params.value.value;
+          return params.data.name + ': ' + params.data.value;
         }
       },
       labelLayout: {
