@@ -38,6 +38,8 @@
         })
     });
 
+    console.log(labels);
+
         let option = {
             tooltip: {
               trigger: 'axis',
