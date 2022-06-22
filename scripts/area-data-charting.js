@@ -116,6 +116,7 @@
             type: 'time'
           },
         yAxis: {
+            show: false,
         },
         series: [
             {
@@ -154,7 +155,7 @@
             type: 'time'
           },
           yAxis: {
-            type: 'value'
+            show: false,
           },
         series: [
             {
@@ -227,7 +228,7 @@
         y: 'stock',
         label: ['region', 'stock'],
         itemName: 'Date',
-        tooltip: ['stock']
+        //tooltip: ['stock']
       }
     });
   });
@@ -240,18 +241,16 @@
       },
       ...datasetWithFilters
     ],
-    title: {
-      text: 'Stock levels by region'
-    },
-    tooltip: {
+    /*tooltip: {
       order: 'valueDesc',
       trigger: 'axis'
-    },
+    },*/
     xAxis: {
       type: 'time',
       nameLocation: 'middle'
     },
     yAxis: {
+        show: false,
     },
     grid: {
       right: 140
@@ -345,7 +344,7 @@
         y: 'rent',
         label: ['region', 'rent'],
         itemName: 'Date',
-        tooltip: ['rent']
+        //tooltip: ['rent']
       }
     });
   });
@@ -358,18 +357,16 @@
       },
       ...datasetWithFilters
     ],
-    title: {
-      text: 'Average Rent by region'
-    },
-    tooltip: {
+    /*tooltip: {
       order: 'valueDesc',
       trigger: 'axis'
-    },
+    },*/
     xAxis: {
       type: 'time',
       nameLocation: 'middle'
     },
     yAxis: {
+        show: false,
     },
     grid: {
       right: 140
