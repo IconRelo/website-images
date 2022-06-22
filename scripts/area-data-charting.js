@@ -82,9 +82,7 @@
               formatter: '{b}: {@2012} ({d}%)'
             },
             encode: {
-                itemName: 'name',
-                value: '2012',
-                tooltip: '2012'
+                itemName: 'name'
             }
           })
 
