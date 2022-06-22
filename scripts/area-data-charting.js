@@ -121,6 +121,7 @@
             {
                 type: "line",
                 name: "Stock",
+                smooth: true,
                 data: chart_data,
                 showSymbol: false,
             }
@@ -156,6 +157,7 @@
             {
                 type: "line",
                 name: "Stock",
+                smooth: true,
                 data: chart_data,
                 showSymbol: false,
             }
