@@ -102,7 +102,10 @@
             'name' : 'Stock',
             'date' : Date.parse(item.items[0].date),
             'date_name' : item.items[0].date,
-            'value' : item.stock
+            'value' : [
+                Date.parse(item.items[0].date),
+                item.stock
+              ]
         
         }
     });
@@ -135,7 +138,10 @@
             'name' : 'Rent',
             'date' : Date.parse(item.items[0].date),
             'date_name' : item.items[0].date,
-            'value' : item.average_rent_50
+            'value' : [
+                Date.parse(item.items[0].date),
+                item.average_rent_50
+              ]
         
         }
     });
