@@ -110,23 +110,6 @@
     let labels = data.data.map((item) => item.items[0].date);
 
     chart['uk_stock'].setOption({
-        visualMap: [
-            {
-              show: false,
-              type: 'continuous',
-              seriesIndex: 0,
-              min: 0,
-              max: 40000
-            },
-            {
-              show: false,
-              type: 'continuous',
-              seriesIndex: 1,
-              dimension: 0,
-              min: 0,
-              max: labels.length
-            }
-          ],
         tooltip: {
             trigger: 'axis',
             axisPointer: {
@@ -155,6 +138,7 @@
                 showSymbol: false,
                 data: chart_data,
                 lineStyle: {
+                  color: '#2871b8',
                   width: 4
                 },
             }
@@ -215,6 +199,10 @@
                 smooth: true,
                 data: chart_data,
                 showSymbol: false,
+                lineStyle: {
+                    color: '#2871b8',
+                    width: 4
+                  },
             }
         ]
      })
@@ -291,7 +279,7 @@
             type: 'line',
             lineStyle: {
                 color: 'rgba(0,0,0,0.2)',
-                width: 1,
+                width: 4,
                 type: 'solid'
             }
         },
@@ -424,7 +412,7 @@
             type: 'line',
             lineStyle: {
                 color: 'rgba(0,0,0,0.2)',
-                width: 1,
+                width: 4,
                 type: 'solid'
             }
         },
