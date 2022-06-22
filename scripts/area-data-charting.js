@@ -51,6 +51,8 @@
             name: bed[0].name,
             type: 'line',
             stack: 'Total',
+            smooth: true,
+            showSymbol: false,
             areaStyle: {},
             emphasis: {
               focus: 'series'
@@ -171,8 +173,8 @@
                 type: "line",
                 name: "Stock",
                 smooth: true,
-                data: chart_data.reverse(),
                 showSymbol: false,
+                data: chart_data.reverse(),
             }
         ]
      })
