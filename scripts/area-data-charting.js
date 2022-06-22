@@ -145,9 +145,9 @@
   let populateUKRent = (data) => {
 
     if(data.overview.rent_change > 0){
-        document.getElementById('uk-rent-summary').innerText = 'Rental Property Rents have gone up by on average £'+Math.round(data.overview.rent_change);
+        document.getElementById('uk-rent-summary').innerText = 'Rental Property Rents have gone up by on average £'+Math.round(data.overview.rent_change)+ ' per month';
     } else {
-        document.getElementById('uk-rent-summary').innerText = 'Rental Property Rents have gone down by on average £'+Math.round(data.overview.rent_change);
+        document.getElementById('uk-rent-summary').innerText = 'Rental Property Rents have gone down by on average £'+Math.round(data.overview.rent_change)+ ' per month';
     }
 
 
