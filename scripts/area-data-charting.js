@@ -90,7 +90,7 @@
     dataset: [
       {
         id: 'dataset_raw',
-        source: data
+        source: region.data
       },
       ...datasetWithFilters
     ],
@@ -111,7 +111,8 @@
     grid: {
       right: 140
     },
-    series: seriesList
+    series: seriesList,
+    dimensions: ['date', 'stock']
   };
   chart['regional_stock'].setOption(option);
 
