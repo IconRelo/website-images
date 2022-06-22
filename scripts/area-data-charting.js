@@ -1,7 +1,25 @@
 
   let populateData = (data) =>  {
     console.log('is new:', data)
+    populateStock(data);
+
   };
+
+  let populateStock = (data) => {
+
+    let chart_data = data.data.map((item) => item.stock);
+
+    myChart.setOption({
+        // .... some configuration
+        series: [
+            {
+                type: "line",
+                name: "test",
+                data: chart_data
+            }
+        ]
+     })
+  }
    
 fetch('https://area-data-api.test/api/places/9131/reports/yearly?date=2022-05-01&with_children=1', {
     headers: new Headers({
