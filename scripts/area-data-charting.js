@@ -90,7 +90,7 @@
     dataset: [
       {
         id: 'dataset_raw',
-        source: region.data
+        source: region.data.map((item) => { return { 'name':region.area, 'value': item.stock, 'date': Date.parse(item.items[0].date) }})
       },
       ...datasetWithFilters
     ],
