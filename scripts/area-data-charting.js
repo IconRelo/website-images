@@ -20,9 +20,14 @@
   let populateBedroomBreakdown = (data) => {
 
     let raw_data = [];
+    let seriesList = [];
+    let labels = [];
 
     data.forEach((item) => {
         item.items.forEach((bedroom) => {
+            if(!labels.includes((bedroom.bedrooms) ? bedroom.bedrooms + ' bedroom' : 'Studio')){
+                labels.push((bedroom.bedrooms) ? bedroom.bedrooms + ' bedroom' : 'Studio')
+            }
             raw_data.push(
                 {
                     name: (bedroom.bedrooms) ? bedroom.bedrooms + ' bedroom' : 'Studio',
@@ -35,52 +40,37 @@
 
     console.log(raw_data);
 
-    /*[
-            ['product', '2012', '2013', '2014', '2015', '2016', '2017'],
-            ['Milk Tea', 56.5, 82.1, 88.7, 70.1, 53.4, 85.1],
-            ['Matcha Latte', 51.1, 51.4, 55.1, 53.3, 73.8, 68.7],
-            ['Cheese Cocoa', 40.1, 62.2, 69.5, 36.4, 45.2, 32.5],
-            ['Walnut Brownie', 25.2, 37.1, 41.2, 18, 33.9, 49.1]
-          ]*/
+    
+    labels.forEach((bedroom) => {
+        var datasetId = 'dataset_' + bedroom;
+        seriesList.push({
+            type: 'line',
+            datasetId: datasetId,
+            showSymbol: false,
+            name: region,
+            endLabel: {
+              show: true,
+              formatter: function (params) {
+                return params.data.name;
+              }
+            },
+            labelLayout: {
+              moveOverlap: 'shiftY'
+            },
+            emphasis: {
+              focus: 'series'
+            },
+            encode: {
+              x: 'date',
+              y: 'rent',
+              label: ['region', 'rent'],
+              itemName: 'Date',
+              tooltip: ['rent']
+            }
+          });
+        });
 
-    option = {
-        legend: {},
-        tooltip: {
-          trigger: 'axis',
-          showContent: false
-        },
-        dataset: {
-          source: raw_data
-        },
-        xAxis: { type: 'category' },
-        yAxis: { gridIndex: 0 },
-        grid: { top: '55%' },
-        series: [
-          {
-            type: 'line',
-            smooth: true,
-            seriesLayoutBy: 'row',
-            emphasis: { focus: 'series' }
-          },
-          {
-            type: 'line',
-            smooth: true,
-            seriesLayoutBy: 'row',
-            emphasis: { focus: 'series' }
-          },
-          {
-            type: 'line',
-            smooth: true,
-            seriesLayoutBy: 'row',
-            emphasis: { focus: 'series' }
-          },
-          {
-            type: 'line',
-            smooth: true,
-            seriesLayoutBy: 'row',
-            emphasis: { focus: 'series' }
-          },
-          {
+        seriesList.push({
             type: 'pie',
             id: 'pie',
             radius: '30%',
@@ -96,8 +86,21 @@
               value: '2012',
               tooltip: '2012'
             }
-          }
-        ]
+          })
+
+    option = {
+        legend: {},
+        tooltip: {
+          trigger: 'axis',
+          showContent: false
+        },
+        dataset: {
+          source: raw_data
+        },
+        xAxis: { type: 'category' },
+        yAxis: { gridIndex: 0 },
+        grid: { top: '55%' },
+        series: seriesList
       };
   };
 
