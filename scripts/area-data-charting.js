@@ -124,7 +124,7 @@
               seriesIndex: 1,
               dimension: 0,
               min: 0,
-              max: dateList.length - 1
+              max: labels.length
             }
           ],
         tooltip: {
