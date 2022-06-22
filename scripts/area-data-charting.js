@@ -83,7 +83,7 @@
       datasetId: datasetId,
       showSymbol: false,
       name: region,
-      endLabel: {
+      /*endLabel: {
         show: true,
         formatter: function (params) {
             console.log('params', params)
@@ -92,16 +92,16 @@
       },
       labelLayout: {
         moveOverlap: 'shiftY'
-      },
+      },*/
       emphasis: {
         focus: 'series'
       },
       encode: {
-        x: 'Date',
-        y: 'Stock',
-        label: ['Region', 'Stock'],
+        x: 'date',
+        y: 'stock',
+        //label: ['region', 'stock'],
         itemName: 'Date',
-        tooltip: ['Stock']
+        tooltip: ['stock']
       }
     });
   });
