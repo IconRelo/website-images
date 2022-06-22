@@ -114,9 +114,6 @@
         xAxis: {
             type: 'time'
           },
-          yAxis: {
-            type: 'value'
-          },
         series: [
             {
                 type: "line",
@@ -149,9 +146,6 @@
     chart['uk_rent'].setOption({
         xAxis: {
             type: 'time'
-          },
-          yAxis: {
-            type: 'value'
           },
         series: [
             {
@@ -249,7 +243,6 @@
       nameLocation: 'middle'
     },
     yAxis: {
-      name: 'Income'
     },
     grid: {
       right: 140
@@ -370,7 +363,6 @@
       nameLocation: 'middle'
     },
     yAxis: {
-      name: 'Income'
     },
     grid: {
       right: 140
