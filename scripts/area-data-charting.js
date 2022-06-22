@@ -16,7 +16,7 @@
     let chart_data = data.data.map((item) => item.stock);
     let labels = data.data.map((item) => item.items[0].date);
 
-    myChart.setOption({
+    chart['uk_stock'].setOption({
         xAxis: {
             type: 'category',
             data: labels
