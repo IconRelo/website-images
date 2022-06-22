@@ -105,6 +105,8 @@
     });
     let labels = data.data.map((item) => item.items[0].date);
 
+    console.log(chart_data);
+
     chart['uk_stock'].setOption({
         xAxis: {
             type: 'time',
