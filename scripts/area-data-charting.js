@@ -47,7 +47,7 @@
         console.log(element)
         raw_data.push(
             element.data.map((item) => {
-                return { 'name':region.area, 'value': item.stock, 'date': Date.parse(item.items[0].date) }
+                return { 'name':element.area, 'value': item.stock, 'date': Date.parse(item.items[0].date) }
             })
         )
     })
