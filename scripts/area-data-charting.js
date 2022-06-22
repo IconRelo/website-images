@@ -46,7 +46,7 @@
     data.forEach((element) => {
         console.log(element)
         raw_data.push(
-            element.map((item) => {
+            element.data.map((item) => {
                 return { 'name':region.area, 'value': item.stock, 'date': Date.parse(item.items[0].date) }
             })
         )
