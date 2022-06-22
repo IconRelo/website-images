@@ -99,6 +99,7 @@
         return {
             'name' : 'Stock',
             'date' : Date.parse(item.items[0].date),
+            'date_name' : item.items[0].date,
             'value' : item.stock
         
         }
