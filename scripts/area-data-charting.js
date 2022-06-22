@@ -119,7 +119,8 @@
             {
                 type: "line",
                 name: "Stock",
-                data: chart_data
+                data: chart_data,
+                showSymbol: false,
             }
         ]
      })
