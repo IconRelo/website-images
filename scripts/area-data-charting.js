@@ -30,8 +30,8 @@
             if(!labels.includes((bedroom.bedrooms) ? bedroom.bedrooms + ' bedroom' : 'Studio')){
                 labels.push((bedroom.bedrooms) ? bedroom.bedrooms + ' bedroom' : 'Studio')
             }
-            if(typeof data == 'undefined'){
-                data[bedroom.bedrooms] = []
+            if(typeof raw_data[bedroom.bedrooms] == 'undefined'){
+                raw_data[bedroom.bedrooms] = []
             }
             raw_data[bedroom.bedrooms].push(
                 {
