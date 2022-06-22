@@ -22,7 +22,8 @@
   let populateBedroomBreakdown = (data) => {
 
     let raw_data = [];
-    let seriesList = [];
+    let data = [];
+    let series = [];
     let labels = [];
 
     data.forEach((item) => {
@@ -30,7 +31,10 @@
             if(!labels.includes((bedroom.bedrooms) ? bedroom.bedrooms + ' bedroom' : 'Studio')){
                 labels.push((bedroom.bedrooms) ? bedroom.bedrooms + ' bedroom' : 'Studio')
             }
-            raw_data.push(
+            if(typeof data == 'undefined'){
+                data[bedroom.bedrooms] = []
+            }
+            data[bedroom.bedrooms].push(
                 {
                     name: (bedroom.bedrooms) ? bedroom.bedrooms + ' bedroom' : 'Studio',
                     value: bedroom.count,
@@ -39,6 +43,24 @@
             )
         })
     });
+
+    data.forEach((bed) => {
+        series.push({
+            name: bed[0].name,
+            type: 'line',
+            stack: 'Total',
+            areaStyle: {},
+            emphasis: {
+              focus: 'series'
+            },
+            data: bed.map((item) => [
+                Date.parse(item.date),
+                item.value
+              ])
+          })
+    })
+
+
 
     option = {
         title: {
@@ -79,62 +101,7 @@
             type: 'value'
           }
         ],
-        series: [
-          {
-            name: 'Email',
-            type: 'line',
-            stack: 'Total',
-            areaStyle: {},
-            emphasis: {
-              focus: 'series'
-            },
-            data: [120, 132, 101, 134, 90, 230, 210]
-          },
-          {
-            name: 'Union Ads',
-            type: 'line',
-            stack: 'Total',
-            areaStyle: {},
-            emphasis: {
-              focus: 'series'
-            },
-            data: [220, 182, 191, 234, 290, 330, 310]
-          },
-          {
-            name: 'Video Ads',
-            type: 'line',
-            stack: 'Total',
-            areaStyle: {},
-            emphasis: {
-              focus: 'series'
-            },
-            data: [150, 232, 201, 154, 190, 330, 410]
-          },
-          {
-            name: 'Direct',
-            type: 'line',
-            stack: 'Total',
-            areaStyle: {},
-            emphasis: {
-              focus: 'series'
-            },
-            data: [320, 332, 301, 334, 390, 330, 320]
-          },
-          {
-            name: 'Search Engine',
-            type: 'line',
-            stack: 'Total',
-            label: {
-              show: true,
-              position: 'top'
-            },
-            areaStyle: {},
-            emphasis: {
-              focus: 'series'
-            },
-            data: [820, 932, 901, 934, 1290, 1330, 1320]
-          }
-        ]
+        series: series
       };
 
     console.log(labels);
