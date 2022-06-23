@@ -158,7 +158,7 @@
             'rent_change': item.rent_change_from_prev_perc,
             'value' : [
                 Date.parse(item.items[0].date),
-                item.average_rent_50
+                item.average
               ]
         
         }
@@ -356,8 +356,8 @@ document.getElementById('regional-stock-summary').innerText = 'Rental Property S
             return {
                 'name':element.area,
                 'region':element.area,
-                'value': Math.round(item.average_rent_50),
-                'rent': Math.round(item.average_rent_50),
+                'value': Math.round(item.average),
+                'rent': Math.round(item.average),
                 'date': Date.parse(item.items[0].date),
                 'rent_change': item.rent_change_from_prev_perc,
             }
