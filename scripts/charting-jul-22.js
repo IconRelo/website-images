@@ -460,7 +460,7 @@ document.getElementById('regional-rent-summary').innerText = 'Rental Property Pr
 
   }
    
-fetch('https://staging.myareawise.com/api/places/8964/reports/half-yearly?date=2022-06-01&with_children=1', {
+fetch('https://staging.myareawise.com/api/places/8964/reports/half-yearly?date=2022-07-29&with_children=1', {
     headers: new Headers({
         'Authorization': 'Bearer 3|mr49dJQwvS4lGj5wgUq7bvzV6NdViZHbu9yAUknU', 
         'Accept': 'application/json',
